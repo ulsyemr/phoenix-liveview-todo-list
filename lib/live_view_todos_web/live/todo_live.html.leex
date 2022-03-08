@@ -5,7 +5,20 @@
 
 
 
+<div>Update
+  <%= for todo <- @todos do %>
+  <li>
+      <%= todo.title %>
+      <%= checkbox(:todo, :done, phx_click: "toggle_done", phx_value_id: todo.id, value: todo.done) %>
+    </li>
+  <% end %>
+</div>
 
-<%= for todo <- @todos do %>
-  <div><%= todo.title %></div>
-<% end %>
+<div>Delete
+  <%= for todo <- @todos do %>
+  <li>
+      <%= todo.title %>
+      <%= checkbox(:todo, :done, phx_click: "toggle_delete", phx_value_id: todo.id, value: todo.done) %>
+    </li>
+  <% end %>
+</div>
